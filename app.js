@@ -1,7 +1,7 @@
 var gplay = require('google-play-scraper').memoized();
 const express = require('express')
 const app = express()
-const port = 3000
+const localPort = 3000
 
 app.get('/categories', (req, res) => {
     gplay.categories({throttle: 5, country: "in"}).then(result => {
@@ -99,4 +99,7 @@ app.get('/dev', (req, res) => {
     });
 })
 
-app.listen(port, () => console.log('App listening on port ${port}!'))
+var server = app.listen(process.env.PORT || localPort, () => {
+    var port = server.address().port;
+    console.log(`App listening on port ${port}!`)
+})
