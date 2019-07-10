@@ -13,15 +13,8 @@ app.get('/categories', (req, res) => {
 
 app.get('/', (req, res) => {
     gplay.list({throttle: 5, country: "in", category: req.query.category, 
-        collection: req.query.collection})
+        collection: req.query.collection, start: req.query.start})
         .then(result => {
-            retusult = result.sort((first, second) => {
-                var a = first['score'];
-                var b = second['score'];
-                if(a > b) return -1;
-                if(a < b) return 1;
-                return 0;
-            })
             res.send(result)
         }, error => {
             res.send(error)
@@ -81,7 +74,7 @@ app.get('/suggestions', (req, res) => {
 app.get('/search', (req, res) => {
     gplay.search({
         term: req.query.q,
-        num: 15,    
+        num: 20,    
         country: "in",
         throttle: 5
       }).then(result => res.send(result), error => {

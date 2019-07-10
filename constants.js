@@ -1,4 +1,4 @@
-module.exports.category = {
+category = {
   APPLICATION: 'APPLICATION',
   ANDROID_WEAR: 'ANDROID_WEAR',
   ART_AND_DESIGN: 'ART_AND_DESIGN',
@@ -60,7 +60,7 @@ module.exports.category = {
   FAMILY_PRETEND: 'FAMILY_PRETEND'
 };
 
-module.exports.collection = {
+collection = {
   TOP_FREE: 'topselling_free',
   TOP_PAID: 'topselling_paid',
   NEW_FREE: 'topselling_new_free',
@@ -69,13 +69,13 @@ module.exports.collection = {
   TRENDING: 'movers_shakers'
 };
 
-module.exports.sort = {
+sort = {
   NEWEST: 0,
   RATING: 1,
   HELPFULNESS: 2
 };
 
-module.exports.age = {
+age = {
   FIVE_UNDER: 'AGE_RANGE1',
   SIX_EIGHT: 'AGE_RANGE2',
   NINE_UP: 'AGE_RANGE3'
