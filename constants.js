@@ -69,12 +69,6 @@ collection = {
   TRENDING: 'movers_shakers'
 };
 
-sort = {
-  NEWEST: 0,
-  RATING: 1,
-  HELPFULNESS: 2
-};
-
 age = {
   FIVE_UNDER: 'AGE_RANGE1',
   SIX_EIGHT: 'AGE_RANGE2',
