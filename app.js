@@ -12,7 +12,7 @@ app.get('/categories', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    gplay.list({throttle: 5, country: "in", category: req.query.category, 
+    gplay.list({throttle: 5, country: "in", category: req.query.category,
         collection: req.query.collection, start: req.query.start})
         .then(result => {
             res.send(result)
@@ -63,7 +63,7 @@ app.get('/apps/similar', (req, res) => {
 app.get('/suggestions', (req, res) => {
     gplay.suggest({
         term: req.query.q,
-        num: 15,    
+        num: 15,
         country: "in",
         throttle: 5
     }).then(result => res.send(result), error => {
@@ -74,7 +74,7 @@ app.get('/suggestions', (req, res) => {
 app.get('/search', (req, res) => {
     gplay.search({
         term: req.query.q,
-        num: 20,    
+        num: 20,
         country: "in",
         throttle: 5
       }).then(result => res.send(result), error => {
@@ -84,7 +84,7 @@ app.get('/search', (req, res) => {
 
 app.get('/dev', (req, res) => {
     gplay
-    .developer({devId: "enictech", throttle: 5, country: "in"})
+    .developer({devId: req.query.id, throttle: 5, country: "in"})
     .then(result => {
         res.send(result)
     }, error => {
